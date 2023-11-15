@@ -1,0 +1,21 @@
+#!/bin/sh
+# usage: nana [[startline] [endline]]? [file]*
+
+if [ "X$1" = "X" ]; then
+  echo "usage: nana [[startline] [endline]]? [file]*"
+  exit
+fi
+
+if [ -f $1 ]
+then
+
+  pr -t -n -m $*
+
+else
+  O=`expr $1 - 1`
+  N=$2
+  M=`expr $2 - $O`
+
+  echo \<$3\>
+  pr -t -n $3 | head -n$N | tail -n$M  
+fi

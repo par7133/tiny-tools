@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $# in
+1) (pcregrep -n "^[$]?$1[^\w]" * ; pcregrep -n "   ? ?[$]?$1[^\w]" * ; pcregrep -n "[^\w'][$]?$1[^\w]" * ) | sort -un
+;;
+2) (pcregrep -n "^[$]?$1[^\w]" $2 ; pcregrep -n "   ? ?[$]?$1[^\w]" $2 ; pcregrep -n "[^\w'][$]?$1[^\w]" $2 ) | sort -un
+;;
+*) echo "usage: var [identifier] [file]?"
+   exit 1
+;;
+esac
+exit 0
