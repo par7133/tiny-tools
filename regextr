@@ -1,21 +1,21 @@
 #!/bin/sh
 
-# usage: regextr [cmd]*
+# usage: regextr [exp]*
 #
 #    eg:
-#      cat=(
-#      /cat=)
+#      capt=(
+#      /capt=)
 #      etc.
 #
 # see your ~/.regextr for the complete syntax, or the code just below 
 #
 # it can be used yet to compose expressions:
 #
-#    echo lol | pcregrep "`./regextr cap capname text /capname l repeat /cap`"
+#    echo lol | pcregrep "`./regextr capt captname text /captname l repeated /capt`"
 #
 
 if [ "X$0" = "X" ]; then
-  echo "usage: regextr [cmd]*"
+  echo "usage: regextr [exp]*"
   exit
 fi
 
@@ -27,11 +27,11 @@ if [ ! -e ~/.regextr ]; then
 	echo "/exp=/" >>~/.regextr
 	echo "boundstart=^" >>~/.regextr
 	echo "boundend=$" >>~/.regextr
-	echo "cap=(" >>~/.regextr 
-	echo "/cap=)" >>~/.regextr 
-	echo "capor=|" >>~/.regextr 
-	echo "capname=?<" >>~/.regextr
-	echo "/capname=>" >>~/.regextr 
+	echo "capt=(" >>~/.regextr 
+	echo "/capt=)" >>~/.regextr 
+	echo "captor=|" >>~/.regextr 
+	echo "captname=?<" >>~/.regextr
+	echo "/captname=>" >>~/.regextr 
 	echo "range=[" >>~/.regextr 
 	echo "notrange=[^" >>~/.regextr 
 	echo "/range=]" >>~/.regextr 
@@ -40,7 +40,7 @@ if [ ! -e ~/.regextr ]; then
 	echo "word=\w" >>~/.regextr 
 	echo "space=\s" >>~/.regextr 
 	echo "notspace=\S" >>~/.regextr 
-	echo "repeat=+" >>~/.regextr 
+	echo "repeated=+" >>~/.regextr 
 	echo "maybenot=?" >>~/.regextr 
 	echo "quant={" >>~/.regextr 
 	echo "quantsep=-" >>~/.regextr 
