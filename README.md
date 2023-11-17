@@ -5,8 +5,9 @@ Originally inspired by the Tiny Tools article, by Gerald J. Holzmann, with some 
 
 The article was severals years old (I. Software, jan/Feb 2016) and the code should be adapted to OpenBSD. But I tried to convert them: 
 
-- nana (was num), e printing utility for your code
+- nana (was num), a printing utility for your code
 - fun (was fn), a function search utility
+- regextr, a reg expression failitator
 - var (was itok), a variable search utility
 
 Hope you can find them somewhat useful. Have fun!
