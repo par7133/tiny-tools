@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# usage: regextr [cmd]*
+#
+#    eg:
+#      cat=(
+#      /cat=)
+#      etc.
+#
+# see your ~/regextr for the complete syntax, or the code just below 
+#
+# it can be used yet to compose expressions:
+#
+#    echo lol | pcregrep "`./regextr cap capname text /capname l repeat /cap`"
+#
+
+if [ "X$0" = "X" ]; then
+  echo "usage: regextr [cmd]*"
+  exit
+fi
+
+if [ ! -e ~/.regextr ]; then
+
+  # creating default syntax file..
+  
+	echo "exp=/" >>~/.regextr 
+	echo "/exp=/" >>~/.regextr
+	echo "boundstart=^" >>~/.regextr
+	echo "boundend=$" >>~/.regextr
+	echo "cap=(" >>~/.regextr 
+	echo "/cap=)" >>~/.regextr 
+	echo "capor=|" >>~/.regextr 
+	echo "capname=?<" >>~/.regextr
+	echo "/capname=>" >>~/.regextr 
+	echo "range=[" >>~/.regextr 
+	echo "notrange=[^" >>~/.regextr 
+	echo "/range=]" >>~/.regextr 
+	echo "digit=\d" >>~/.regextr 
+	echo "string=." >>~/.regextr 
+	echo "word=\w" >>~/.regextr 
+	echo "space=\s" >>~/.regextr 
+	echo "notspace=\S" >>~/.regextr 
+	echo "repeat=+" >>~/.regextr 
+	echo "maybenot=?" >>~/.regextr 
+	echo "quant={" >>~/.regextr 
+	echo "quantsep=-" >>~/.regextr 
+	echo "/quant=}" >>~/.regextr 
+fi
+
+res=""
+
+for exp in $@; do
+   test=`pcregrep ^$exp\= ~/.regextr | cut -d = -s -f 2`
+   if [ "X$test" = "X" ]; then
+     res=$res$exp
+   else
+     res=$res`pcregrep ^$exp\= ~/.regextr | cut -d = -s -f 2`
+   fi
+done   
+
+echo $res
