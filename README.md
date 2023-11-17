@@ -7,7 +7,7 @@ The article was severals years old (I. Software, jan/Feb 2016) and the code shou
 
 - nana (was num), a printing utility for your code
 - fun (was fn), a function search utility
-- regextr, a reg expression failitator
+- regextr, a reg expression facilitator
 - var (was itok), a variable search utility
 
 Hope you can find them somewhat useful. Have fun!
