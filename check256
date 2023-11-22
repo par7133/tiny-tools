@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "X$1" = "X" ]; then
+  echo "usage: check256 [file] [sha256 checksum]"
+  exit
+fi
+
+CHECKSUM="$2"
+echo "$CHECKSUM  $1" > /tmp/verify.sha256
+sha256 -c /tmp/verify.sha256
