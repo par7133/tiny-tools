@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "X$1" = "X" ]; then
+  echo "usage: checkmd5 [file] [md5 checksum]"
+  exit
+fi
+
+CHECKSUM="$2"
+echo "$CHECKSUM  $1" > /tmp/verify.md5
+md5 -c /tmp/verify.md5
