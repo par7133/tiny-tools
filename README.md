@@ -5,6 +5,7 @@ Originally inspired by the Tiny Tools article, by Gerald J. Holzmann, with some 
 
 The article was severals years old (I. Software, jan/Feb 2016) and the code should be adapted to OpenBSD. But I tried to convert them: 
 
+- checkmd5, an md5 checksum utility
 - check256, a sha256 checksum utility
 - nana (was num), a printing utility for your code
 - fun (was fn), a function search utility
