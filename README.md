@@ -13,3 +13,5 @@ The article was severals years old (I. Software, jan/Feb 2016) and the code shou
 - var (was itok), a variable search utility
 
 Hope you can find them somewhat useful. Have fun!
+
+Feedback: <a href="mailto:code@gaox.io">code@gaox.io</a>
