@@ -14,7 +14,7 @@ The article was severals years old (I. Software, jan/Feb 2016) and the code shou
 
 Hope you can find them somewhat useful. Have fun!
 
-For any need of software additions, plugins and improvements please write to <a href="mailto:info@5mode.com">info@5mode.com</a>  
+For any need of software additions, plugins and improvements please write to <a href="mailto:info@numode.eu">info@numode.eu</a>  
 
 To help please donate by clicking <a href="https://gaox.io/l/dona1">https://gaox.io/l/dona1</a> and filling the form.  
 
